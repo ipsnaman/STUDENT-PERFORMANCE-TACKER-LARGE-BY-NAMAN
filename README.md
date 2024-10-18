@@ -6,11 +6,8 @@ Live Demo: https://epi-spt-demo.herokuapp.com/
 
 #### Contributions By:
 
-* _Andrew Giang <giang184[at]gmail[dot]com>_
-* _Kristen Hopper <hopperdavis[at]gmail[dot]com>_
-* _Arthur Lee <meleearthur[at]gmail[dot]com>_
-* _Dave Lindqvist <lindqvist[dot]dave[at]gmail[dot]com>_
-* _Michael Reiersgaard <Michael[dot]Reiersgaard[at]gmail[dot]com>_
+* _NAMAN_KUMAR <nk232230@gmail.com>_
+
 
 ## Technologies Used
 
