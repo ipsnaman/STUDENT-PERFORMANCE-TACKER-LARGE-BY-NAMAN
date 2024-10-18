@@ -1,0 +1,163 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@import "bootstrap";
+
+@font-face {
+  font-family: "Raleway";
+  src: url("/fonts/Raleway-Regular.ttf");
+}
+
+body {
+  font-family: Lato, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+.nav-link {
+  font-family: Raleway, Lato, sans-serif;
+}
+
+footer {
+  border-top: solid #d20e13 0.25rem;
+  margin-top: auto;
+}
+
+a {
+  color: #d20e13;
+  font-family: Raleway, Lato, sans-serif;
+}
+
+a:hover {
+  color: #505ac7;
+}
+
+#user-info {
+  margin-left: auto;
+}
+
+.errors {
+  background-color: lightcoral;
+}
+
+.page-item,
+ul.pagination a {
+  color: #303030;
+}
+
+li.page-item.active {
+  background-color: #d20e13;
+  border-color: #d20e13;
+  color: white;
+}
+
+.btn a {
+  color: white;
+  text-decoration: none;
+}
+
+.grid-col-1 {
+  background-color: #34373c !important;
+  color: white;
+}
+
+.grid-col-1 a,
+.grid-col-2 a {
+  color: white;
+}
+
+.grid-col-2 {
+  background-color: #444444 !important;
+  color:white;
+}
+
+.table {
+  border-bottom: none !important;
+}
+thead,
+tbody,
+tfoot,
+tr,
+td,
+th {
+  border: none;
+}
+
+.btn-primary {
+  background-color: #d20e13;
+  border-color: #d20e13;
+}
+
+.btn-primary:hover {
+  background-color: #505ac7;
+  border-color: #505ac7;
+}
+
+.navbar {
+  border-bottom: solid #d20e13 0.25rem;
+}
+
+.errors {
+  background-color: lightcoral;
+}
+
+.text-muted a {
+  color: #d20e13 !important;
+  font-family: Raleway, Lato, sans-serif;
+}
+
+#page-content {
+  flex: 1 0 auto;
+}
+
+.border-left {
+  border-left: solid #aaa 1px;
+}
+
+.pagination-top ul {
+  margin-bottom: 0
+}
+
+.bm-list {
+  padding: .5rem .25rem;
+}
+
+th.rotate {
+  height: 140px;
+  white-space: nowrap;
+}
+
+th.rotate > div {
+  transform: 
+    translate(-3px, 20px)
+    rotate(315deg);
+  width: 30px;
+}
+
+th.rotate > div > span {
+  border-top: 1px solid #ccc;
+  padding: 5px 5px 5px 25px;
+}
+
+.benchmark-th-odd {
+  background-color: white;
+  
+}
+.benchmark-th-even {
+  background-color: #f8f9fa;
+}
