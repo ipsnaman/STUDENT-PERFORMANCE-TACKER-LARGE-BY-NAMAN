@@ -1,0 +1,103 @@
+<% if @student.benchmark_results.any? %>
+  <div class="table-responsive-lg">
+    <table class="table mt-3 benchmarks-table">
+      <thead>
+        <tr class="table-light">
+          <th class="table-light text-center" scope="col"></th>
+          <th colspan="1" class="text-center" scope="col">
+            <div><span>TOWSRF</span></div>
+          </th>
+          <th colspan="2" class="text-center" scope="col">
+            <div><span>Gates-MacGinitie</span></div>
+          </th>
+          <th colspan="2" class="text-center" scope="col">
+            <div><span>TOWRE</span></div>
+          </th>
+          <th colspan="8" class="text-center" scope="col">
+            <div><span>DIBELS</span></div>
+          </th>
+          <th class="text-center" scope="col">
+            <div><span></span></div>
+          </th>
+        </tr>
+        <tr>
+          <th class="table-light text-center" scope="col">Date</th>
+          <th class="rotate" scope="col">
+            <div><span class="benchmark-th-odd">TOWSRF GE</span></div>
+          </th>
+          <th class="rotate table-light" scope="col">
+            <div><span class="benchmark-th-even">Vocab GE</span></div>
+          </th>
+          <th class="rotate table-light" scope="col">
+            <div><span class="benchmark-th-even">Reading Comp GE</span></div>
+          </th>
+          <th class="rotate" scope="col">
+            <div><span class="benchmark-th-odd">Sight Word GE</span></div>
+          </th>
+          <th class="rotate" scope="col">
+            <div><span class="benchmark-th-odd">Phonemic Decode GE</span></div>
+          </th>
+          <th class="rotate table-light" scope="col">
+            <div><span class="benchmark-th-even">LNF</span></div>
+          </th>
+          <th class="rotate table-light" scope="col">
+            <div><span class="benchmark-th-even">SNF</span></div>
+          </th>
+          <th class="rotate table-light" scope="col">
+            <div><span class="benchmark-th-even">ORF Grade Level</span></div>
+          </th>
+          <th class="rotate table-light" scope="col">
+            <div><span class="benchmark-th-even">ORF CWPM</span></div>
+          </th>
+          <th class="rotate table-light" scope="col">
+            <div><span class="benchmark-th-even">ORF Accuracy</span></div>
+          </th>
+          <th class="rotate table-light" scope="col">
+            <div><span class="benchmark-th-even">ORF Inst. Grade Level</span></div>
+          </th>
+          <th class="rotate table-light" scope="col">
+            <div><span class="benchmark-th-even">ORF Inst. CWPM</span></div>
+          </th>
+          <th class="rotate table-light" scope="col">
+            <div><span class="benchmark-th-even">ORF Inst. Accuracy</span></div>
+          </th>
+        </tr>
+      </thead>
+      <thead>
+      </thead>
+      <tbody>
+        <% @student.benchmark_results.order(:date).reverse_order.each do |q| %>
+          <tr class="border-bottom">
+            <th class="text-left table-light py-3" scope="row">
+              <%= link_to q.get_season(q.date), student_benchmark_result_path(@student, q.id) %>
+            </th>
+            <td class="border-start text-end "><%= q.ge %></td>
+            <td class="border-start text-end table-light"><%= q.vocab_ge %></td>
+            <td class="border-start text-end table-light"><%= q.reading_comp_ge %></td>
+            <td class="border-start text-end "><%= q.sight_word_ge %></td>
+            <td class="border-start text-end"><%= q.phonemic_decoding_ge %></td>
+            <td class="border-start text-end table-light"><%= q.lnf %></td>
+            <td class="border-start text-end table-light"><%= q.snf %></td>
+            <td class="border-start text-end table-light"><%= q.orf_grade_lvl %></td>
+            <td class="border-start text-end table-light"><%= q.orf_cwpm %></td>
+            <td class="border-start text-end table-light">
+              <% if q.orf_accuracy? %>
+                <%="#{q.orf_accuracy.round(2)}%" %>
+              <% end%>
+            </td>
+            <td class="border-start text-end table-light"><%= q.orf_instructional_grade_lvl %></td>
+            <td class="border-start text-end table-light"><%= q.orf_instructional_cwpm %></td>
+            <td class="border-start text-end table-light">
+              <% if q.orf_instructional_accuracy? %>
+                <%="#{q.orf_instructional_accuracy.round(2)}%" %>
+              <% end%>
+            </td>
+            <td class="table-light text-center border-start py-3"><%= link_to "Edit", edit_student_benchmark_result_path(@student, q.id) %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+<% else %>
+  <p>No results to display.</p>
+<% end %>
